@@ -33,6 +33,7 @@ while True:
         print("\nYou have successfully created a Student!")
         input("Press enter to continue...")
         print("\n")
+
     elif choice == 2:
         if len(ListOfStudents) == 0:
             print("\nYou have not created any Students")
@@ -47,3 +48,33 @@ while True:
 
             input("\nPress enter to continue...")
             print("\n")
+
+    elif choice == 3:
+        if len(ListOfStudents) == 0:
+            print("\nYou have not created any Students")
+            input("Press enter to continue...")
+            print("\n")
+        else:
+            print("\n--- You are deleting a Student ---")
+            id_to_delete = input("Enter student id: ")
+            for i in range(len(ListOfStudents)):
+                if ListOfStudents[i].s_id == id_to_delete:
+                    print("Student Found!")
+                    print(f"{ListOfStudents[i].last_name}, {ListOfStudents[i].first_name} - {ListOfStudents[i].course} - {ListOfStudents[i].s_id}")
+
+                    sure = input("\nAre you sure you want to delete this Student? (y/n): ").lower()
+                    if sure == "y":
+                        del ListOfStudents[i]
+                        print("\nStudent Deleted!")
+                        input("Press enter to continue...")
+                        print("\n")
+                    else:
+                        print("\nStudent Not Deleted!")
+                        input("Press enter to continue...")
+                        print("\n")
+                    break
+            print(f"\nThe id {id_to_delete} does not exist.")
+            input("Press enter to continue...")
+            print("\n")
+
+
