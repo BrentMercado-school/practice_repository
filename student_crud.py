@@ -3,6 +3,7 @@ class Student(object):
         self.last_name = last_name
         self.first_name = first_name
         self.course = course
+        self.s_id = s_id
 
 ListOfStudents = []
 while True:
@@ -21,7 +22,7 @@ while True:
             continue
 
     if choice == 1:
-        print("\n\n--- You are now creating a Student ---")
+        print("\n--- You are now creating a Student ---")
         lname = input("Enter student last name: ")
         fname = input("Enter student first name: ")
         c = input("Enter student course: ")
@@ -32,3 +33,17 @@ while True:
         print("\nYou have successfully created a Student!")
         input("Press enter to continue...")
         print("\n")
+    elif choice == 2:
+        if len(ListOfStudents) == 0:
+            print("\nYou have not created any Students")
+            input("Press enter to continue...")
+            print("\n")
+        else:
+            print("\n--- You are viewing the list of Students ---")
+            i = 1
+            for student in ListOfStudents:
+                print(f"{i}. {student.last_name}, {student.first_name} - {student.course} - {student.s_id}")
+                i = i + 1
+
+            input("\nPress enter to continue...")
+            print("\n")
