@@ -77,4 +77,31 @@ while True:
             input("Press enter to continue...")
             print("\n")
 
+    elif choice == 4:
+        if len(ListOfStudents) == 0:
+            print("\nYou have not created any Students")
+            input("Press enter to continue...")
+            print("\n")
+        else:
+            print("\n--- You are editing a Student ---")
+            id_to_edit = input("Enter student id: ")
+            for i in range(len(ListOfStudents)):
+                if ListOfStudents[i].s_id == id_to_edit:
+                    print("\nStudent Found!")
+                    print("--------------------------")
+                    print(f"Name: {ListOfStudents[i].last_name}, {ListOfStudents[i].first_name}")
+                    print(f"Course: {ListOfStudents[i].course}")
+                    print(f"ID: {ListOfStudents[i].s_id}")
+                    print("--------------------------")
+                    new_last_name = input("Enter new last name: ")
+                    ListOfStudents[i].last_name = new_last_name
+                    new_first_name = input("Enter new first name: ")
+                    ListOfStudents[i].first_name = new_first_name
+                    new_course = input("Enter new course: ")
+                    ListOfStudents[i].course = new_course
+
+                    print("\nStudent Edited!")
+                    input("Press enter to continue...")
+                    print("\n")
+
 
